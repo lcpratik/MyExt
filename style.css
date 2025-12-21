@@ -1,0 +1,147 @@
+:root{
+  --bg: #0b1220;
+  --panel: #0f1a2e;
+  --border: rgba(255,255,255,0.10);
+  --text: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.65);
+
+  --green: #22c55e;
+  --green-2: #16a34a;
+
+  --danger: #ef4444;
+  --danger-2: #dc2626;
+
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 14px;
+  min-width: 360px;              /* feels nicer as a popup */
+  background: radial-gradient(1200px 600px at 20% -10%, rgba(34,197,94,0.25), transparent 50%),
+              radial-gradient(900px 500px at 110% 0%, rgba(59,130,246,0.18), transparent 55%),
+              var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* Input */
+input{
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  outline: none;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+input::placeholder{
+  color: var(--muted);
+}
+
+input:focus{
+  border-color: rgba(34,197,94,0.6);
+  box-shadow: 0 0 0 4px rgba(34,197,94,0.18);
+}
+
+/* Buttons */
+button{
+  margin-top: 10px;
+  margin-right: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background: linear-gradient(180deg, var(--green), var(--green-2));
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  box-shadow: 0 10px 18px rgba(34,197,94,0.22);
+  transition: transform 140ms ease, filter 140ms ease, box-shadow 140ms ease;
+}
+
+button:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+  box-shadow: 0 14px 24px rgba(34,197,94,0.25);
+}
+
+button:active{
+  transform: translateY(0px) scale(0.99);
+}
+
+button:focus{
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(34,197,94,0.18), 0 10px 18px rgba(34,197,94,0.22);
+}
+
+/* Delete button (your #dlt-btn) */
+#dlt-btn{
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  border: 1px solid var(--border);
+  box-shadow: none;
+}
+
+#dlt-btn:hover{
+  transform: translateY(-1px);
+  border-color: rgba(239,68,68,0.45);
+  box-shadow: 0 10px 18px rgba(239,68,68,0.12);
+}
+
+#dlt-btn:focus{
+  box-shadow: 0 0 0 4px rgba(239,68,68,0.18);
+}
+
+/* List */
+ul{
+  list-style: none;
+  padding-left: 0;
+  margin: 14px 0 0;
+  display: grid;
+  gap: 10px;
+}
+
+/* Each saved item becomes a card */
+li{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+li a{
+  display: block;
+  padding: 12px 12px;
+  color: rgba(255,255,255,0.92);
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 1.25;
+
+  /* Make long links look clean */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  transition: background 140ms ease, color 140ms ease;
+}
+
+li a:hover{
+  background: rgba(34,197,94,0.12);
+  color: white;
+}
+
+/* Nice selection highlight */
+::selection{
+  background: rgba(34,197,94,0.35);
+}
