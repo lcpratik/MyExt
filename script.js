@@ -4,7 +4,6 @@ const buttonClick = document.getElementById("input-btn")
 const ulel = document.getElementById("ul-el")
 const dltbtn = document.getElementById("dlt-btn")
 const tabbtn = document.getElementById("tab-btn")
-console.log(ulel)
 
 let storageValue = JSON.parse( localStorage.getItem("myLeeds") )
 
@@ -52,7 +51,3 @@ chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     render(myLeeds)
 });
 })
-
-
-
-//const email = `Hey ${recipent} How its going cheers ${sender}!`
